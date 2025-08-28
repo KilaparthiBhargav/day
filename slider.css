@@ -1,0 +1,51 @@
+.swiper {
+  width: 90%;
+  max-width: 1000px;
+  height: 300px;
+  margin: 40px auto;
+}
+
+.swiper-slide {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-8px);
+}
+
+.swiper-slide h1 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.swiper-slide p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Pagination bullets */
+.swiper-pagination-bullet {
+  background: #333;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff;
+  opacity: 1;
+}
