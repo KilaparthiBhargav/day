@@ -76,6 +76,10 @@ body {
 
 .navlog h1 {
   font-size: 2rem;
+  display: none;
+}
+.navlog.show {
+  display: block;
 }
 
 .navoptions {

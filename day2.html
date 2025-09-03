@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Test</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <style>
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background: #f8f8f8;
+    }
+
+    .navlog h1 {
+      font-size: 2rem;
+      display: none; /* hidden by default */
+    }
+
+    /* when .show is added, reveal h1 */
+    .navlog.show h1 {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="navlog">
+      <h1>LOGO.in</h1>
+    </div>
+
+    <div class="navoptions">
+      <div class="dropdown">
+        <button
+          class="btn dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Shop
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Kids</a></li>
+          <li><a class="dropdown-item" href="#">Womens</a></li>
+          <li><a class="dropdown-item" href="#">Men</a></li>
+        </ul>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#">On Sale</a></li>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Brands</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nav-Search-bar">
+      <i class="bi bi-search"></i>
+      <input type="text" placeholder="Search for the products..." />
+    </div>
+
+    <div class="profile-cart">
+      <div>
+        <span><i class="bi bi-cart"></i></span>
+        <span><i class="bi bi-person-circle"></i></span>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const accOption = document.querySelector(".bi-person-circle");
+      const navlog = document.querySelector(".navlog");
+
+      if (!accOption || !navlog) {
+        console.error("Missing .bi-person-circle or .navlog in the DOM");
+        return;
+      }
+
+      // hover color
+      accOption.addEventListener("mouseenter", () => {
+        accOption.style.color = "red";
+      });
+      accOption.addEventListener("mouseleave", () => {
+        accOption.style.color = "";
+      });
+
+      // toggle show/hide on click
+      accOption.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navlog.classList.toggle("show");
+      });
+
+      // close on outside click
+      document.addEventListener("click", (e) => {
+        const clickedOutside = !navlog.contains(e.target) && !accOption.contains(e.target);
+        if (clickedOutside) navlog.classList.remove("show");
+      });
+
+      // close on Esc key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") navlog.classList.remove("show");
+      });
+    });
+  </script>
+</body>
+</html>

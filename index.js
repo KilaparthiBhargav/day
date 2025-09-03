@@ -46,3 +46,26 @@ function updateSlideBlur() {
     }
   });
 }
+
+const accOption=document.querySelector(".bi-person-circle")
+const navlog=document.querySelector(".navlog")
+console.log("::",navlog.innerHTML)
+accOption.addEventListener("click",()=>{
+  alert("clicked")
+})
+accOption.addEventListener("onClick",()=>{
+  accOption.style.color="red"
+})
+
+
+// show navlog on hover
+accOption.addEventListener("onClick", () => {
+  navlog.classList.add("show");
+});
+
+// optional: hide when mouse leaves
+accOption.addEventListener("mouseleave", () => {
+  navlog.classList.remove("show");
+    accOption.style.color="black"
+
+});

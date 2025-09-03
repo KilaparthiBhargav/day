@@ -49,3 +49,10 @@
   background: #007bff;
   opacity: 1;
 }
+
+.navlog{
+  display: none;
+}
+/* .navlog.show {
+  display: block;
+} */
