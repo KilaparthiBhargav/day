@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+      
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+    <style>
+      :root{
+        --font-size:30px;
+        --color:red
+      }
+      p{
+        font-size:var(--font-size) ;
+      }
+        #map{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+
+    </div>
+
+
+    <div>
+        <p class="1">asdfewafewasdfewf </p>
+        <p class="2">asdfewafewasdfewf </p>
+        <p class="3"> asdfewafewasdfewf </p>
+        <p class="4">asdfewafewasdfewf </p>
+        <p class="5">asdfewafewasdfewf </p>
+        <p class="6">asdfewafewasdfewf </p>
+    </div>
+    <script>
+        var map= L.map('map').setView([51.505, -0.09], 13)
+      L.tileLayer('https://api.maptiler.com/maps/hybrid/256/{z}/{x}/{y}.jpg?key=hBJP2D3NhMfvD2DnN5NF', {
+    maxZoom: 19,
+    attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+}).addTo(map);
+var leafleticon=L.icon({
+    iconUrl:'OIP1_imresizer.jpg',iconSize:[38,95],iconAnchor:[22,94]
+})
+let marker=L.marker([51.505, -0.09], {
+      icon: leafleticon 
+}).addTo(map)
+
+
+            </script>
+</body>
+</html>

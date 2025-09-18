@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masonry Grid Different Sizes</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #eee;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+      grid-auto-rows: 80px;                  /* base row height */
+      gap: 6px;
+      width: 95%;
+      max-width: 1000px;
+    }
+
+    .item {
+      background: #d81b60;
+      border: 2px solid #6a0033;
+      border-radius: 5px;
+    }
+
+    /* Size variations */
+    .w2 { grid-column: span 2; }
+    .w3 { grid-column: span 3; }
+    .h2 { grid-row: span 2; }
+    .h3 { grid-row: span 3; }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="item"></div>            
+    <div class="item w2"></div>          
+    <div class="item h2"></div>         
+    <div class="item"></div>            
+    <div class="item w2 h2"></div>      
+    <div class="item h2"></div>         
+    <div class="item w3"></div>         
+    <div class="item h2"></div>          
+    <div class="item h3"></div>          
+    <div class="item"></div>          
+    <div class="item w2 h2"></div>       
+    <div class="item"></div>          
+  </div>
+</body>
+</html>

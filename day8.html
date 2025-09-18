@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #fff;
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: left 1s ease;
+        border: solid black;
+        max-width: 400px;
+      }
+      .mega-menu{
+        position: fixed;
+        top: 0;
+        left: -200px;
+        transition: left 1s ease;
+        border: solid black;
+        max-width: 400px;
+      }
+      .navbar ul,
+      li {
+        list-style: none;
+      }
+      .navbar > li > svg {
+        width: 20px;
+        height: 20px;
+      }
+      .navbar > li {
+        display: flex;
+        align-items: center;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: #000000;
+      }
+     
+        .mega-menu.active {
+        left: 0px;      
+      }
+       .navbar.shift{
+        left:-300px;
+        background: red !important; 
+       }
+        .layer-one-back-btn svg{
+          width: 24px;
+        }
+          .mega-column {
+          display: flex;
+          flex-direction: row;
+          }
+        .mega-column > ul{
+          position: fixed;
+          top: 0px;
+          transition: left 1s ease-in-out;
+          left: -100%;
+        }
+        .mega-column.active >ul{
+              left: 0%;
+        }
+
+         .second-layer{
+
+          width: 20px;
+        }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+     <ul class="navbar">
+  <li>
+    <a href="#">Home</a>
+  </li>
+
+  <!-- SHOP PARENT -->
+  <li>
+    <a href="#">Shop</a>
+    <!-- Arrow icon for parent -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+      viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+      class="size-6 first-layer">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+    </svg>
+
+    <!-- Mega Menu -->
+    <div class="mega-menu">
+
+      <!-- Back Button -->
+      <span class="layer-one-back-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+        </svg>
+      </span>
+
+      <!-- First Column -->
+      <div class="mega-column">
+        <h4>Clothing</h4>
+        <!-- Arrow for column parent -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="size-6 second-layer">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+        </svg>
+
+        <ul>
+          <li>
+            <a href="#">T-Shirts</a>
+            <!-- Arrow for parent -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 third-layer">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+            </svg>
+
+            <ul class="sub-menu">
+              <!-- Back Button -->
+              <span class="layer-two-back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                </svg>
+              </span>
+              <li><a href="#">Men's</a></li>
+              <li><a href="#">Women's</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">Jeans</a>
+            <!-- Arrow for parent -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 third-layer">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+            </svg>
+
+            <ul class="sub-menu">
+              <!-- Back Button -->
+              <span class="layer-two-back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                </svg>
+              </span>
+              <li><a href="#">Skinny</a></li>
+              <li><a href="#">Regular</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Second Column -->
+      <div class="mega-column">
+        <h4>Accessories</h4>
+        <!-- Arrow for column parent -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor" class="size-6 second-layer">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+        </svg>
+
+        <ul>
+          <li>
+            <a href="#">Bags</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 third-layer">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+            </svg>
+            <ul class="sub-menu">
+              <span class="layer-two-back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                </svg>
+              </span>
+              <li><a href="#">Backpacks</a></li>
+              <li><a href="#">Handbags</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">Watches</a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6 third-layer">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"/>
+            </svg>
+            <ul class="sub-menu">
+              <span class="layer-two-back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+                </svg>
+              </span>
+              <li><a href="#">Men's Watches</a></li>
+              <li><a href="#">Women's Watches</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </li>
+
+  <li><a href="#">About</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+
+    </header>
+   
+  </body>
+ <script>
+  const megaMenu = document.querySelector(".mega-menu");
+    const navbar = document.querySelector(".navbar");  
+    const btn=document.querySelector(".layer-one-back-btn")
+    const firstlayer=document.querySelector(".first-layer")
+    const secondlayer=document.querySelectorAll(".second-layer")
+    const megacolumn=document.querySelector(".mega-column")
+     console.log(secondlayer)
+    firstlayer.addEventListener("click",()=>{
+            megaMenu.classList.add("active")
+            navbar.classList.add("shift")
+      })
+      btn.addEventListener("click",()=>{
+        megaMenu.classList.remove("active")
+          navbar.classList.remove("shift")  
+      })
+      secondlayer.forEach((e)=>{
+        e.addEventListener("click",()=>{
+      megacolumn.classList.add("active")
+      megaMenu.classList.remove("active")
+      })
+      })
+      
+    </script>
+</html>

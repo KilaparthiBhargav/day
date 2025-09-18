@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transform & Transition Example</title>
+  <style>
+    body {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: steelblue;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .box2 {
+      width: 100px;
+      height: 100px;
+      background: tomato;
+      transition: change 0.6s ease-in-out;
+    }
+
+
+    .box:hover {
+        change: translateX(-200px) translateY(-200px) rotate(500deg);
+    }
+
+    .box2:hover {
+      change: translateX(-100px) translateY(-100px) rotate(20deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box2"></div>
+</body>
+</html>

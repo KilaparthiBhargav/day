@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+            background: #000;
+        }
+        body.active{
+            background: #ffff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main">
+        <button id="toggle-btn">On</button>
+    </div>
+    <script>
+        // const body=document.body;
+        const btn=document.getElementById("toggle-btn")
+        btn.addEventListener("click",()=>{
+            if (btn.innerHTML === "On") {
+            btn.innerHTML = "Off";
+document.body.classList.add("active")
+
+        } else {
+            btn.innerHTML = "On";
+document.body.classList.remomve("active")
+
+        }
+        })
+    
+    </script>
+</body>
+</html>

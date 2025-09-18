@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Header</title>
+<style>
+/* RESET */
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+}
+/* Inner menu item */
+.inner-menu-item {
+  position: relative;
+}
+
+/* Inner mega menu (right side) */
+.inner-mega-menu {
+  position: absolute;
+  top: 0;
+  left: 100%; /* appears to the right of parent */
+  width: 500px;
+  background: #fff;
+  padding: 20px;
+  display: none;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-left: 2px solid red;
+  z-index: 1000;
+}
+
+/* Show inner menu when hover */
+.inner-menu-item:hover .inner-mega-menu {
+  display: grid;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  z-index: 1000;
+}
+.logo h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.navbar ul {
+  display: flex;
+  gap: 20px;
+}
+.navbar a {
+  color: #111;
+  font-weight: 500;
+  padding: 6px 10px;
+  display: inline-block;
+}
+.navbar a:hover {
+  color: red;
+}
+
+/* MEGA MENU */
+.menu-item {
+  position: relative;
+}
+.mega-menu {
+  position: absolute;
+  top: 100%; /* directly below parent */
+  left: 0;
+  width: 800px;
+  background: #fff;
+  padding: 20px;
+  display: none;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-top: 2px solid red;
+  z-index: 999;
+}
+.mega-menu.show {
+  display: grid;
+}
+.mega-column h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+.mega-column ul li {
+  margin-bottom: 6px;
+}
+.mega-column ul li a {
+  font-size: 13px;
+  color: #555;
+}
+.mega-column ul li a:hover {
+  color: #000;
+}
+.mega-menu-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* MOBILE MENU */
+.menu-icon {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+  transition: left 0.3s ease;
+  z-index: 2000;
+}
+.mobile-menu.show {
+  left: 0;
+}
+.close-menu {
+  cursor: pointer;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+.mobile-dropdown .mobile-submenu {
+  display: none;
+  padding-left: 15px;
+}
+.mobile-dropdown.open .mobile-submenu {
+  display: block;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .navbar ul {
+    display: none;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .mega-menu {
+    position: static;
+    width: 100%;
+    display: none !important;
+    box-shadow: none;
+    border: none;
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+  
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <h2 tabindex="0" role="button" class="logo-img">SHOP.CO</h2>
+  </div>
+
+  <div class="menu-icon">&#9776;</div>
+
+  <nav class="navbar">
+    <ul>
+      <!-- Shop Dropdown -->
+      <li class="dropdown">
+        <div class="shop" tabindex="0" role="button">
+          Shop
+          <svg class="arrow-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </svg>
+        </div>
+      </li>
+
+      <!-- On Sale Mega Menu -->
+    <li class="menu-item" data-menu="sale">
+  <a href="#">On Sale</a>
+  <div class="mega-menu">
+    <div class="mega-column">
+      <h4>Categories</h4>
+      <ul>
+        <li><a href="#">T-Shirts</a></li>
+        <li><a href="#">Shoes</a></li>
+        <li class="inner-menu-item">
+          <a href="#">Accessories ▸</a>
+          <!-- INNER MEGA MENU -->
+          <div class="inner-mega-menu">
+            <div class="mega-column">
+              <h4>Accessories</h4>
+              <ul>
+                <li><a href="#">Caps</a></li>
+                <li><a href="#">Belts</a></li>
+                <li><a href="#">Watches</a></li>
+              </ul>
+            </div>
+            <div class="mega-column">
+              <h4>Brands</h4>
+              <ul>
+                <li><a href="#">Fossil</a></li>
+                <li><a href="#">Casio</a></li>
+                <li><a href="#">Rolex</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</li>
+
+    </ul>
+  </nav>
+</header>
+
+<!-- Mega menu overlay & container -->
+<div id="mega-menu-overlay"></div>
+<div id="mega-menu-container"></div>
+
+<!-- Mega menu content hidden -->
+
+
+<!-- Mobile menu -->
+<div class="mobile-menu">
+  <span class="close-menu">✖ Close</span>
+  <ul>
+    <li class="mobile-dropdown">
+      <span class="mobile-title">Shop</span>
+      <ul class="mobile-submenu">
+        <li>Kids</li>
+        <li>Womens</li>
+        <li>Men</li>
+      </ul>
+    </li>
+    <li>On Sale</li>
+    <li>New Arrivals</li>
+    <li class="mobile-dropdown">
+      <span class="mobile-title">Brands</span>
+      <ul class="mobile-submenu">
+        <li>Nike</li>
+        <li>Adidas</li>
+        <li>Puma</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<script>
+const menuItems = document.querySelectorAll('.menu-item.has-mega');
+
+menuItems.forEach(item => {
+  const megaMenu = item.querySelector('.mega-menu');
+
+  item.addEventListener('mouseenter', () => {
+    megaMenu.classList.add('show');
+  });
+
+  item.addEventListener('mouseleave', () => {
+    megaMenu.classList.remove('show');
+  });
+
+  // Accessibility: open on keyboard focus
+  const link = item.querySelector('a');
+  link.addEventListener('focus', () => {
+    megaMenu.classList.add('show');
+  });
+
+  link.addEventListener('blur', () => {
+    megaMenu.classList.remove('show');
+  });
+});
+
+
+</script>
+
+
+</body>
+</html>

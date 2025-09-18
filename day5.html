@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mega-nav > ul{
+            position: relative;
+            display: flex;    
+            flex-direction: row;
+
+        }
+         .mega-nav > ul , li ,a{
+          text-decoration: none;
+          list-style: none;
+          padding: 10px;
+          white-space: nowrap;
+        }
+            .mega-menu{
+                position: absolute;
+                display: none;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: start;
+
+            }
+            .mega-menu.active{
+                display: flex;
+            }
+ .mega-nav > ul > li:hover .mega-menu{
+    display: flex;
+ }.mega-column{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+ }
+ @media(max-width:1024px){
+      .mega-nav > ul{
+            position: relative;
+            display: flex;    
+            flex-direction: column;
+
+        }
+         .mega-nav > ul > li:hover .mega-menu{
+    display: none;
+ }
+ }
+    </style>
+</head>
+<body>
+    <nav class="mega-nav">
+  <ul>
+    <!-- Mattresses -->
+    <li class="has-mega">
+      <a href="#">Mattresses</a>
+      <span class="mega-drop-btn"> \_/</span>
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Shop by size <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Single Mattresses</a></li>
+            <li><a href="#">Small Double Mattresses</a></li>
+            <li><a href="#">Double Mattresses</a></li>
+            <li><a href="#">King Mattresses</a></li>
+            <li><a href="#">European King Mattresses</a></li>
+            <li><a href="#">Super King Mattresses</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by mattress type <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Memory Foam</a></li>
+            <li><a href="#">Hybrid</a></li>
+            <li><a href="#">Octaspring</a></li>
+            <li><a href="#">Rolled</a></li>
+            <li><a href="#">Advanced</a></li>
+            <li><a href="#">Pocket Sprung</a></li>
+            <li><a href="#">Anti-Allergy</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by collection <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Octasmart Essentials</a></li>
+            <li><a href="#">S Plus</a></li>
+            <li><a href="#">Octaspring</a></li>
+            <li><a href="#">Memory</a></li>
+            <li><a href="#">Fresh</a></li>
+            <li><a href="#">Octasmart</a></li>
+            <li><a href="#">Fast Delivery</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <!-- Beds -->
+    <li class="has-mega">
+      <a href="#">Beds</a>
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Shop by bed type <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Bed Frames</a></li>
+            <li><a href="#">Ottoman Beds</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by size <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Single Beds</a></li>
+            <li><a href="#">Double Beds</a></li>
+            <li><a href="#">King Size Beds</a></li>
+            <li><a href="#">Super King Beds</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <!-- Mattress Toppers -->
+    <li class="has-mega">
+      <a href="#">Mattress Toppers</a>
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Shop by size <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Single Mattress Toppers</a></li>
+            <li><a href="#">Small Double Mattress Toppers</a></li>
+            <li><a href="#">Double Mattress Toppers</a></li>
+            <li><a href="#">King Mattress Toppers</a></li>
+            <li><a href="#">Super King Mattress Toppers</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by topper type <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Memory Foam</a></li>
+            <li><a href="#">Cooling</a></li>
+            <li><a href="#">Zoned</a></li>
+            <li><a href="#">Octaspring</a></li>
+            <li><a href="#">Rolled</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by collection <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Octasmart</a></li>
+            <li><a href="#">Octasmart Essentials</a></li>
+            <li><a href="#">Octaspring</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <!-- Bedding -->
+    <li class="has-mega">
+      <a href="#">Bedding</a>
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Shop by bedding type <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Mattress Toppers</a></li>
+            <li><a href="#">Pillows</a></li>
+            <li><a href="#">Duvets</a></li>
+            <li><a href="#">Mattress Protectors</a></li>
+            <li><a href="#">Accessories</a></li>
+            <li><a href="#">Bundles</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by collection <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Evercomfy</a></li>
+            <li><a href="#">Dormeo</a></li>
+            <li><a href="#">Octasense</a></li>
+            <li><a href="#">Octasmart</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+        <div class="mega-column">
+          <h4>Shop by size <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Single</a></li>
+            <li><a href="#">Double</a></li>
+            <li><a href="#">King</a></li>
+            <li><a href="#">Super King</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <!-- SALE -->
+    <li class="has-mega">
+      <a href="#">SALE</a>
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Shop our sale offers <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Mattress Offers</a></li>
+            <li><a href="#">Mattress Topper Offers</a></li>
+            <li><a href="#">Bedding Offers</a></li>
+            <li><a href="#">As Seen On TV</a></li>
+            <li><a href="#">Clearance Offers</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+
+    <!-- Clearance -->
+    <li class="has-mega">
+      <a href="#">Clearance</a>
+      <div class="mega-menu">
+        <div class="mega-column">
+          <h4>Shop Clearance Items <span class="arrow-btn">▼</span></h4>
+          <ul>
+            <li><a href="#">Mattress Offers</a></li>
+            <li><a href="#">Mattress Topper Offers</a></li>
+            <li><a href="#">Bedding Offers</a></li>
+            <li><a href="#">As Seen On TV</a></li>
+            <li><a href="#">View All ></a></li>
+          </ul>
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>
+    <script>
+        const dropBtn=document.querySelector(".mega-drop-btn")
+        const megacolumn=document.querySelector(".mega-menu")
+        dropBtn.addEventListener("click",()=>{
+        megacolumn.classList.toggle=("active")
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mega Menu Animation</title>
+  <style>
+    .mega-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .has-mega {
+      border-bottom: 1px solid #b71414;
+    }
+
+    .mega-drop-btn {
+      cursor: pointer;
+      margin-left: 8px;
+    }
+
+    /* Hidden state */
+    .mega-menu {
+      max-height: 0;
+      overflow: hidden;
+      transform: translateX(-110px);
+      opacity: 0;
+      transition: max-height 0.5s ease-in-out, transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    }
+
+    /* Active state */
+    .mega-menu.active {
+      max-height: 500px;
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .mega-column {
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="mega-nav">
+    <ul>
+      <li class="has-mega">
+        <a href="#">Mattresses</a>
+        <span class="mega-drop-btn">▼</span>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Shop by size</h4>
+            <ul>
+              <li><a href="#">Single</a></li>
+              <li><a href="#">Double</a></li>
+              <li><a href="#">King</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+
+      <li class="has-mega">
+        <a href="#">Beds</a>
+        <span class="mega-drop-btn">▼</span>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h4>Shop by type</h4>
+            <ul>
+              <li><a href="#">Frames</a></li>
+              <li><a href="#">Ottoman</a></li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    document.querySelectorAll(".mega-drop-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+
+        const menu = btn.nextElementSibling;
+        console.log(":: ",menu)
+
+        // Close other menus before opening this one
+        document.querySelectorAll(".mega-menu").forEach((m) => {
+            console.log("m::",m)
+          if (m !== menu) m.classList.remove("active");
+        });
+
+        menu.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
